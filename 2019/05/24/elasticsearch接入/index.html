@@ -6,21 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://huanghuizhou.github.io">
-  <title>相册 | 长生</title>
+  <title>elasticsearch接入 | 长生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://huanghuizhou.github.io/photos/index.html">
+  <meta name="description" content="参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;li521wang&#x2F;article&#x2F;details&#x2F;83792552 项目源码demo：https:&#x2F;&#x2F;github.com&#x2F;huanghuizhou&#x2F;elasticsearch-demo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch接入">
+<meta property="og:url" content="https://huanghuizhou.github.io/2019/05/24/elasticsearch%E6%8E%A5%E5%85%A5/index.html">
 <meta property="og:site_name" content="长生">
-<meta property="og:description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
+<meta property="og:description" content="参考博客：https:&#x2F;&#x2F;blog.csdn.net&#x2F;li521wang&#x2F;article&#x2F;details&#x2F;83792552 项目源码demo：https:&#x2F;&#x2F;github.com&#x2F;huanghuizhou&#x2F;elasticsearch-demo">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-19T03:21:46.646Z">
-<meta property="article:modified_time" content="2020-10-19T03:19:54.000Z">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/es-head.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/es-logstash.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/es-swagger.png">
+<meta property="article:published_time" content="2019-05-24T07:18:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T07:14:33.138Z">
 <meta property="article:author" content="长生">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="boot">
+<meta property="article:tag" content="es">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huanghuizhou.github.io/assets/data/img/es-head.png">
   
     <link rel="alternative" href="/atom.xml" title="长生" type="application/atom+xml">
   
@@ -218,17 +225,28 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-elasticsearch接入" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      相册
+      elasticsearch接入
     </h1>
   
 
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/05/24/elasticsearch%E6%8E%A5%E5%85%A5/" class="archive-article-date">
+        <time datetime="2019-05-24T07:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-24</time>
+</a>
 
   
   
@@ -236,26 +254,173 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)">Photos</a>
-	<a class="photos-btn" href="video.html">视频</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/lawlitewang20/" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+    <p>参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/li521wang/article/details/83792552">https://blog.csdn.net/li521wang/article/details/83792552</a></p>
+<p>项目源码demo：<a target="_blank" rel="noopener" href="https://github.com/huanghuizhou/elasticsearch-demo">https://github.com/huanghuizhou/elasticsearch-demo</a></p>
+<a id="more"></a>
+
+<h2 id="1-es相关安装"><a href="#1-es相关安装" class="headerlink" title="1 es相关安装"></a>1 es相关安装</h2><h3 id="1-1-elasticsearch-安装"><a href="#1-1-elasticsearch-安装" class="headerlink" title="1.1 elasticsearch 安装"></a>1.1 elasticsearch 安装</h3><p> zip下载地址 <a target="_blank" rel="noopener" href="https://www.elastic.co/cn/downloads/past-releases/elasticsearch-6-4-2">https://www.elastic.co/cn/downloads/past-releases/elasticsearch-6-4-2</a></p>
+<p> es不支持root用户启动，创建es用户在bin下启动es</p>
+<pre><code> #创建用户并设置密码
+useradd esuser  -p espassword
+#给esuser用户授权
+chown -R esuser:esgroup /usr/local/elasticsearch-6.2.4
+#切换用户
+su esuser
+#启动es
+./elasticsearch</code></pre>
+<h3 id="1-2-es-analyzer-ik-中文分词安装"><a href="#1-2-es-analyzer-ik-中文分词安装" class="headerlink" title="1.2 es analyzer-ik 中文分词安装"></a>1.2 es analyzer-ik 中文分词安装</h3><p>命令行安装 ，下载完后移到/plugins/analyzer-ik 目录。若没有analyzer-ik 目录手动新建。</p>
+<pre><code>./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.4.2/elasticsearch-analysis-ik-6.4.2.zip</code></pre>
+<p> 直接下载zip<a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.4.2/elasticsearch-analysis-ik-6.4.2.zip">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.4.2/elasticsearch-analysis-ik-6.4.2.zip</a> 手动解压到/plugins/analyzer-ik 目录</p>
+<p>安装完后重启 es</p>
+<h3 id="1-3-elasticsearch-head-安装"><a href="#1-3-elasticsearch-head-安装" class="headerlink" title="1.3 elasticsearch-head 安装"></a>1.3 elasticsearch-head 安装</h3><p> 由于head插件本质上还是一个nodejs的工程，因此需要安装node，使用npm来安装依赖的包。</p>
+<p> 下载head插件</p>
+<pre><code> git clone https://github.com/mobz/elasticsearch-head.git</code></pre>
+<p>npm 初始化并启动</p>
+<pre><code>npm install
+npm install -g grunt --registry=https://registry.npm.taobao.org
+npm run start</code></pre>
+<p>修改es配置文件，支持跨域访问，在config/elasticseach.yml下新增。</p>
+<pre><code># 是否支持跨域
+http.cors.enabled: true
+
+# *表示支持所有域名
+http.cors.allow-origin: &quot;*&quot;</code></pre>
+<p>重启es，然后访问 localhost:9100。如下图所示：</p>
+<p><img src="/assets/data/img/es-head.png" alt="es-head"></p>
+<h3 id="1-4-使用logstash-实现mysql与es同步"><a href="#1-4-使用logstash-实现mysql与es同步" class="headerlink" title="1.4 使用logstash 实现mysql与es同步"></a>1.4 使用logstash 实现mysql与es同步</h3><p>下载zip <a target="_blank" rel="noopener" href="https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.tar.gz">https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.tar.gz</a></p>
+<p>在myes目录下新建 mysql.conf </p>
+<pre><code>input &#123;
+    stdin &#123;
+    &#125;
+    jdbc &#123;
+      # mysql 数据库链接,shop为数据库名
+      jdbc_connection_string =&gt; &quot;jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&quot;
+      # 用户名和密码
+      jdbc_user =&gt; &quot;root&quot;
+      jdbc_password =&gt; &quot;123456&quot;
+      # 驱动
+      jdbc_driver_library =&gt; &quot;/Users/logstash-6.4.2/myes/mysql-connector-java-5.1.40.jar&quot;
+      # 驱动类名
+      jdbc_driver_class =&gt; &quot;com.mysql.jdbc.Driver&quot;
+      jdbc_paging_enabled =&gt; &quot;true&quot;
+      jdbc_page_size =&gt; &quot;50000&quot;
+      # 执行的sql 文件路径+名称
+      statement_filepath =&gt; &quot;/Users/logstash-6.4.2/myes/user.sql&quot;
+      # 设置监听间隔  各字段含义（由左至右）分、时、天、月、年，全部为*默认含义为每分钟都更新
+      schedule =&gt; &quot;* * * * *&quot;
+      # 索引类型
+      type =&gt; &quot;doc&quot;
+    &#125;
+&#125;
+
+filter &#123;
+    json &#123;
+        source =&gt; &quot;message&quot;
+        remove_field =&gt; [&quot;message&quot;]
+    &#125;
+&#125;
+
+output &#123;
+    elasticsearch &#123;
+        hosts =&gt; [&quot;localhost:9200&quot;]
+        index =&gt; &quot;testindex&quot;
+        document_id =&gt; &quot;%&#123;id&#125;&quot;
+    &#125;
+    stdout &#123;
+        codec =&gt; json_lines
+    &#125;
+&#125;</code></pre>
+<p>在myes目录下新建 test.sql</p>
+<pre><code>SELECT
+    *
+FROM
+    test </code></pre>
+<p>把mysql-connector-java-5.1.40.jar 包放到myes下。</p>
+<p>然后启动logstash </p>
+<pre><code> ./logstash -f ../myes/mysql.conf</code></pre>
+<p>数据如图所示</p>
+<p><img src="/assets/data/img/es-logstash.png" alt="es-logstash"></p>
+<h2 id="2-es常用查询手册"><a href="#2-es常用查询手册" class="headerlink" title="2 es常用查询手册"></a>2 es常用查询手册</h2><h3 id="match"><a href="#match" class="headerlink" title="match"></a>match</h3><p>字段全文搜索</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;match&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;3c product&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="match-phrase"><a href="#match-phrase" class="headerlink" title="match_phrase"></a>match_phrase</h3><p>整词完全匹配</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query-phrase.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query-phrase.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;match_phrase&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Shanghai HB&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="match-phrase-prefix"><a href="#match-phrase-prefix" class="headerlink" title="match_phrase_prefix"></a>match_phrase_prefix</h3><p>单词前缀匹配（不是字段前缀）</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query-phrase-prefix.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-match-query-phrase-prefix.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;match_phrase_prefix&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Advert&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="multi-match"><a href="#multi-match" class="headerlink" title="multi_match"></a>multi_match</h3><p>多字段匹配</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-multi-match-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-multi-match-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;multi_match&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;query&quot;</span>: <span class="string">&quot;shenzhen led&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;fields&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;name^2&quot;</span>,</span><br><span class="line">        <span class="string">&quot;business_scope^4&quot;</span>,</span><br><span class="line">        <span class="string">&quot;registration_location&quot;</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="fuzzy"><a href="#fuzzy" class="headerlink" title="fuzzy"></a>fuzzy</h3><p>单词模糊匹配，根据字符串编辑距离<a target="_blank" rel="noopener" href="https://www.cnblogs.com/BlackStorm/p/5400809.html">https://www.cnblogs.com/BlackStorm/p/5400809.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-fuzzy-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-fuzzy-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;fuzzy&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;value&quot;</span>: <span class="string">&quot;produtc&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;fuzziness&quot;</span>: <span class="string">&quot;AUTO&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="term"><a href="#term" class="headerlink" title="term"></a>term</h3><p>精确匹配</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-term-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-term-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;term&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;year_established&quot;</span>: <span class="number">2001</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>term精确匹配，在对某些被全文索引的字段匹配时，由于字段被分词器分过词，词组被分割，有时候没法精确匹配到比如”input string”这个词，会被分词器分成input和string两个词存储在索引里，term就没法通过”input string”搜索到，因为索引里没有”input string”，只有input和string</p>
+<h3 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h3><p>组合条件查询</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-bool-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-bool-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;bool&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;must&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;match&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;Shenzhen&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;term&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;year_established&quot;</span>: <span class="string">&quot;2001&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>and =&gt; must</li>
+<li>or =&gt; should</li>
+<li>not =&gt; must_not</li>
+</ul>
+<h3 id="function-score"><a href="#function-score" class="headerlink" title="function_score"></a>function_score</h3><p>自定义评分规则</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-function-score-query.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/query-dsl-function-score-query.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;function_score&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;match&quot;</span>: &#123;</span><br><span class="line">          <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;shenzhen product&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">&quot;functions&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;field_value_factor&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;field&quot;</span>: <span class="string">&quot;num_viewed&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;modifier&quot;</span>: <span class="string">&quot;log1p&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;factor&quot;</span>: <span class="string">&quot;1&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">&quot;field_value_factor&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;field&quot;</span>: <span class="string">&quot;level&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;modifier&quot;</span>: <span class="string">&quot;square&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;factor&quot;</span>: <span class="string">&quot;10&quot;</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相关度控制: <a target="_blank" rel="noopener" href="http://wiki.great-tao.com/xwiki/bin/view/Main/JAVA%E5%BC%80%E5%8F%91/%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E8%AF%B4%E6%98%8E/Elasticsearch/%E7%9B%B8%E5%85%B3%E5%BA%A6%E6%8E%A7%E5%88%B6/">http://wiki.great-tao.com/xwiki/bin/view/Main/JAVA开发/公共资源说明/Elasticsearch/相关度控制/</a></p>
+<h3 id="highlight"><a href="#highlight" class="headerlink" title="highlight"></a>highlight</h3><p>返回结果高亮</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/master/search-request-highlighting.html">https://www.elastic.co/guide/en/elasticsearch/reference/master/search-request-highlighting.html</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;query&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;fuzzy&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;value&quot;</span>: <span class="string">&quot;produtc&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;fuzziness&quot;</span>: <span class="string">&quot;AUTO&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;_source&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;name&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">&quot;highlight&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;pre_tags&quot;</span>: <span class="string">&quot;&lt;em&gt;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;post_tags&quot;</span>: <span class="string">&quot;&lt;/em&gt;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;fields&quot;</span>: &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><ul>
+<li>23种非常有用的ElasticSearch查询例子: <a target="_blank" rel="noopener" href="https://www.iteblog.com/archives/1741.html">https://www.iteblog.com/archives/1741.html</a></li>
+</ul>
+<h2 id="3-项目demo"><a href="#3-项目demo" class="headerlink" title="3 项目demo"></a>3 项目demo</h2><p>项目源码demo：<a target="_blank" rel="noopener" href="https://github.com/huanghuizhou/elasticsearch-demo">https://github.com/huanghuizhou/elasticsearch-demo</a></p>
+<p>swagger-ui如下图</p>
+<p><img src="/assets/data/img/es-swagger.png" alt="swagger"></p>
+<p>实现了简单的增删该查，中文分词，自定义权重查询等。</p>
+<h2 id="4-注意点"><a href="#4-注意点" class="headerlink" title="4 注意点"></a>4 注意点</h2><h3 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h3><p>match_phrase 匹配条件：</p>
+<pre><code>1）.match_phrase先分词后去搜的
+
+2）.目标文档需要包含分词后的所有词
+
+3）.目标文档还要保持这些词的相对顺序和文档中的一致</code></pre>
+<p>term 匹配条件：</p>
+<pre><code>1）.term不做分词。如果使用term查询，要确保字段是no analyzed的。建索引的时候要注意。</code></pre>
+<p>例1:</p>
+<pre><code>建索引时使用 ik_max_world 分词。 插入一条数据 name：王富贵
+这时会把它分词为 [王，富贵]
+使用match_phrase 匹配时 输入 &#39;王富&#39; 则匹配不到。&#39;王富&#39; 分词为[王，富]。 只有 &#123;王 ，富贵，王富贵&#125; 可以匹配到。
+同理使用term 匹配时  只有 &#123;王 ，富贵&#125; 可以匹配到。
+使用match 匹配时,只要带有 &#39;王&#39;，&#39;富贵&#39;的任意短语都可以匹配到。 例如&#123;*王*，*富贵*，*王*富贵*.......&#125;</code></pre>
+<p>例2:</p>
+<pre><code>建索引时不使用中文分词。 插入一条数据 name：王富贵
+这时默认分词器会把它分词为 [王，富，贵]
+使用match_phrase 匹配时&#123;王，富，贵，王富，富贵，王富贵&#125; 可以匹配到。
+同理使用term 匹配时  只有 &#123;王 ，富，贵&#125; 可以匹配到。
+使用match 匹配时,只要带有 &#39;王&#39;，&#39;富&#39;,&#39;贵&#39;的任意短语都可以匹配到。 例如&#123;*王*，*富*，*贵*.......&#125;</code></pre>
+<p>看业务需求选择是否使用中文分词。字段字符数少，且常出现不连贯的中文，例如姓名、行星名等字段不建议使用中文分词。</p>
+<h3 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h3><p>logstash 同步mysql数据到es时，并不会同步del操作。也就是mysql中删除后es并不会删除。</p>
+<p>方案：</p>
+<ul>
+<li>1.新增字段status 0：未删除 1:删除。 del走update逻辑。 定期删除mysql和es中status为1的数据。</li>
+<li>2.手动维护mysql与es关系。手动增删改同步。</li>
+</ul>
+<p>logstash 并不会实时同步数据。具体参考配置文件</p>
+<pre><code>     # 设置监听间隔  各字段含义（由左至右）分、时、天、月、年，全部为*默认含义为每分钟都更新
+     schedule =&gt; &quot;* * * * *&quot;</code></pre>
+<p>因此对于需要实时查询的业务不建议使用logstash同步数据。需手动同步数据。使es与mysql数据更新处于一个事务下确保一致性。</p>
 
     
 
@@ -302,7 +467,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://huanghuizhou.github.io/photos/index.html" title="相册" target="_blank">https://huanghuizhou.github.io/photos/index.html</a>
+          <a href="https://huanghuizhou.github.io/2019/05/24/elasticsearch接入/" title="elasticsearch接入" target="_blank">https://huanghuizhou.github.io/2019/05/24/elasticsearch接入/</a>
         </li>
         
         <li>
@@ -319,6 +484,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">boot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">es</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -370,7 +554,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/photos/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/2019/05/24/elasticsearch%E6%8E%A5%E5%85%A5/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -382,6 +566,25 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+    <a href="/2019/06/14/zipkin%E6%8E%A5%E5%85%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          zipkin接入
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/08/%E9%98%B2%E6%AD%A2%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">防止表单重复提交</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -399,6 +602,16 @@
         
     </div>
 </aside>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -439,7 +652,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

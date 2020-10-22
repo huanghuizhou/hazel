@@ -6,21 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://huanghuizhou.github.io">
-  <title>相册 | 长生</title>
+  <title>zipkin接入 | 长生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://huanghuizhou.github.io/photos/index.html">
+  <meta name="description" content="Zipkin是一种分布式跟踪系统。它有助于收集解决微服务架构中的延迟问题所需的时序数据。它管理这些数据的收集和查找。Zipkin的设计基于 Google Dapper论文，对原理感兴趣可以看下。 1 zipkin简介1.1 作用简单说就是采集各服务之间互相调用的信息：谁调用了谁，调用是否发生故障，调用耗时多少。并提供可视化界面。方便快速定位服务故障点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zipkin接入">
+<meta property="og:url" content="https://huanghuizhou.github.io/2019/06/14/zipkin%E6%8E%A5%E5%85%A5/index.html">
 <meta property="og:site_name" content="长生">
-<meta property="og:description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
+<meta property="og:description" content="Zipkin是一种分布式跟踪系统。它有助于收集解决微服务架构中的延迟问题所需的时序数据。它管理这些数据的收集和查找。Zipkin的设计基于 Google Dapper论文，对原理感兴趣可以看下。 1 zipkin简介1.1 作用简单说就是采集各服务之间互相调用的信息：谁调用了谁，调用是否发生故障，调用耗时多少。并提供可视化界面。方便快速定位服务故障点。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-19T03:21:46.646Z">
-<meta property="article:modified_time" content="2020-10-19T03:19:54.000Z">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E5%9F%8B%E7%82%B9.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E9%93%BE%E8%B7%AF.jpg">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E4%BE%9D%E8%B5%96.jpg">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E6%97%A0%E9%93%BE%E8%B7%AF.jpg">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E6%97%A0%E4%BE%9D%E8%B5%96.jpg">
+<meta property="article:published_time" content="2019-06-14T08:36:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T07:11:20.971Z">
 <meta property="article:author" content="长生">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="boot">
+<meta property="article:tag" content="链路">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huanghuizhou.github.io/assets/data/img/zipkin%E6%9E%B6%E6%9E%84.png">
   
     <link rel="alternative" href="/atom.xml" title="长生" type="application/atom+xml">
   
@@ -218,17 +229,28 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-zipkin接入" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      相册
+      zipkin接入
     </h1>
   
 
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/06/14/zipkin%E6%8E%A5%E5%85%A5/" class="archive-article-date">
+        <time datetime="2019-06-14T08:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
+</a>
 
   
   
@@ -236,26 +258,53 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)">Photos</a>
-	<a class="photos-btn" href="video.html">视频</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/lawlitewang20/" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+    <p>Zipkin是一种分布式跟踪系统。它有助于收集解决微服务架构中的延迟问题所需的时序数据。它管理这些数据的收集和查找。Zipkin的设计基于 <a target="_blank" rel="noopener" href="http://bigbully.github.io/Dapper-translation/">Google Dapper论文</a>，对原理感兴趣可以看下。</p>
+<h2 id="1-zipkin简介"><a href="#1-zipkin简介" class="headerlink" title="1 zipkin简介"></a>1 zipkin简介</h2><h3 id="1-1-作用"><a href="#1-1-作用" class="headerlink" title="1.1 作用"></a>1.1 作用</h3><p>简单说就是采集各服务之间互相调用的信息：谁调用了谁，调用是否发生故障，调用耗时多少。并提供可视化界面。方便快速定位服务故障点。</p>
+<a id="more"></a>
+
+
+<h3 id="1-2-原理"><a href="#1-2-原理" class="headerlink" title="1.2 原理"></a>1.2 原理</h3><p>zipkin架构图如下所示：</p>
+<p><img src="/assets/data/img/zipkin%E6%9E%B6%E6%9E%84.png" alt="zipkin架构图"></p>
+<h4 id="Trace"><a href="#Trace" class="headerlink" title="Trace"></a>Trace</h4><p>Zipkin使用Trace结构表示对一次请求的跟踪，一次请求可能由后台的若干服务负责处理，每个服务的处理是一个Span，Span之间有依赖关系，Trace就是树结构的Span集合；</p>
+<h4 id="Span"><a href="#Span" class="headerlink" title="Span"></a>Span</h4><p>每个服务的处理跟踪是一个Span，可以理解为一个基本的工作单元，包含了一些描述信息：id，parentId，name，timestamp，duration，annotations等</p>
+<h4 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h4><p>有4个组件组成Zipkin：collector，storage，search，web UI<br>collector：一旦跟踪数据到达Zipkin collector守护进程，它将被验证，存储和索引，以供Zipkin收集器查找；<br>storage：Zipkin最初数据存储在Cassandra上，因为Cassandra是可扩展的，具有灵活的模式，并在Twitter中大量使用；但是这个组件可插入，除了Cassandra之外，还支持ElasticSearch和MySQL；<br>search：一旦数据被存储和索引，我们需要一种方法来提取它。查询守护进程提供了一个简单的JSON API来查找和检索跟踪，主要给Web UI使用；<br>web UI：创建了一个GUI，为查看痕迹提供了一个很好的界面；Web UI提供了一种基于服务，时间和注释查看跟踪的方法。</p>
+<h4 id="支持跟踪的请求类型"><a href="#支持跟踪的请求类型" class="headerlink" title="支持跟踪的请求类型"></a>支持跟踪的请求类型</h4><ul>
+<li>通过mq技术（如Apache Kafka或RabbitMQ）（或任何其他Spring Cloud Stream binder）进行的请求。</li>
+<li>在Spring MVC controller收到的HTTP header。</li>
+<li>通过Netflix Zuul传过来的microroxy请求。</li>
+<li>使用RestTemplate等进行的请求。</li>
+</ul>
+<p><img src="/assets/data/img/zipkin%E5%9F%8B%E7%82%B9.png" alt="zipkin埋点"></p>
+<p>埋点实现：主要通过filter，aop等拦截技术，获取到Span信息，通过Transport（有三个主要的传输方式：Http、kafka和Scribe）异步发送给zipkin服务器。</p>
+<p>zipkin支持mysql、cassandra、elasticsearch几种存储方案。mysql性能可能有点问题，建议后期改es做持久化。</p>
+<h3 id="1-3-使用场景"><a href="#1-3-使用场景" class="headerlink" title="1.3 使用场景"></a>1.3 使用场景</h3><p> 随着业务越来越复杂，服务也随之拆分。一个前端的请求可能需要多次的服务调用最后才能完成。为了获取服务之间相互依赖信息，以及各服务之间的调用情况。方便快速定位服务故障点，接入zipkin。</p>
+<h2 id="2-zipkin服务器"><a href="#2-zipkin服务器" class="headerlink" title="2 zipkin服务器"></a>2 zipkin服务器</h2><p>项目地址：<a target="_blank" rel="noopener" href="http://gitlab.uniubi.com/huanghuizhou/uniubi-microservice-medusa-zipkin-hhz.git">http://gitlab.uniubi.com/huanghuizhou/uniubi-microservice-medusa-zipkin-hhz.git</a></p>
+<p>开发接入无需关心。</p>
+<p>启动后访问 <a target="_blank" rel="noopener" href="http://192.168.1.172:9411/">http://192.168.1.172:9411</a></p>
+<p><img src="/assets/data/img/zipkin%E6%9C%8D%E5%8A%A1%E5%99%A8.png" alt="zipkin服务器"></p>
+<h2 id="3-项目接入zipkin"><a href="#3-项目接入zipkin" class="headerlink" title="3 项目接入zipkin"></a>3 项目接入zipkin</h2><h3 id="3-1-maven依赖"><a href="#3-1-maven依赖" class="headerlink" title="3.1 maven依赖"></a>3.1 maven依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--zipkin链路追踪--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-zipkin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.1.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-2-配置文件"><a href="#3-2-配置文件" class="headerlink" title="3.2 配置文件"></a>3.2 配置文件</h3><p>application.yml 加入下面配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">zipkin:</span></span><br><span class="line">    <span class="attr">base-url:</span> <span class="string">http://192.168.1.172:9411</span></span><br><span class="line">  <span class="attr">sleuth:</span></span><br><span class="line">    <span class="attr">sampler:</span></span><br><span class="line">    	<span class="comment">#采集比例 默认0.1 只采集10%</span></span><br><span class="line">      <span class="attr">probability:</span> <span class="number">0.1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-注意点"><a href="#4-注意点" class="headerlink" title="4 注意点"></a>4 注意点</h2><h3 id="4-1-RestTemplate-销毁导致无法形成调用链"><a href="#4-1-RestTemplate-销毁导致无法形成调用链" class="headerlink" title="4.1 RestTemplate 销毁导致无法形成调用链"></a>4.1 RestTemplate 销毁导致无法形成调用链</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">getRestTemplate</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">      ResponseEntity&lt;Object&gt; response = restTemplate.exchange(<span class="string">&quot;http://localhost:9500/message/smsLoad?pageSize=10&amp;pageNum=1&quot;</span>, HttpMethod.GET, <span class="keyword">null</span>, Object.class);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过bean 注入restTemplate时能正常形成调用链。span深度为2。</p>
+<p>如下图：<img src="/assets/data/img/zipkin%E9%93%BE%E8%B7%AF.jpg" alt="zipkin链路"><br>服务之间依赖如下图：<img src="/assets/data/img/zipkin%E4%BE%9D%E8%B5%96.jpg" alt="zipkin依赖"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">       RestTemplate restTemplate=<span class="keyword">new</span> RestTemplate();</span><br><span class="line">       ResponseEntity&lt;Object&gt; response = restTemplate.exchange(<span class="string">&quot;http://localhost:9500/message/smsLoad?pageSize=10&amp;pageNum=1&quot;</span>, HttpMethod.GET, <span class="keyword">null</span>, Object.class);</span><br><span class="line">       System.out.println(<span class="number">111</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过局部变量RestTemplate 进行调用，无法形成调用链。span深度为1。</p>
+<p>如下图：<img src="/assets/data/img/zipkin%E6%97%A0%E9%93%BE%E8%B7%AF.jpg" alt="zipkin无链路"></p>
+<p>形成两个单独的调用记录。</p>
+<p>服务之间依赖如下图：<img src="/assets/data/img/zipkin%E6%97%A0%E4%BE%9D%E8%B5%96.jpg" alt="zipkin无依赖"></p>
+<p>看了zipkin brave的部分源码。4.1 局部变量RestTemplate 无法形成调用链的原因大致如下：</p>
+<p>zipkin的信息埋点是在方法执行完后进行的。例：A同步调用B，B服务先执行完向zipkin服务器发送数据。然后A调用完B执行完A的后续方法后，然后也向zipkin服务器发送信息。埋点顺序是 B-A。 </p>
+<p>zipkin的brave TracingClientHttpRequestInterceptor实现了ClientHttpRequestInterceptor接口，会对RestTemplate 的bean进行拦截，<br>并获取到restTemplate返回的response信息从而形成一个调用链。通过局部变量RestTemplate没有接入TracingClientHttpRequestInterceptor<br>拦截器进行拦截，A调用完B后无法获取到B的返回信息，因此A向zipkin发送信息时没有B返回的信息，无法形成调用链。</p>
+<p>TracingClientHttpRequestInterceptor部分源码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> ClientHttpResponse <span class="title">intercept</span><span class="params">(HttpRequest request, <span class="keyword">byte</span>[] body,</span></span></span><br><span class="line"><span class="function"><span class="params">    ClientHttpRequestExecution execution)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">  Span span = handler.handleSend(injector, request.getHeaders(), request);</span><br><span class="line">  ClientHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">  Throwable error = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> (Tracer.SpanInScope ws = tracer.withSpanInScope(span)) &#123;</span><br><span class="line">    <span class="keyword">return</span> response = execution.execute(request, body);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException | RuntimeException | Error e) &#123;</span><br><span class="line">    error = e;</span><br><span class="line">    <span class="keyword">throw</span> e;</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    handler.handleReceive(response, error, span);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>spring cloud feign客户端以bean的形式存在，无需担心此问题。</p>
+<h3 id="4-2-采集率以调用链首个服务为主"><a href="#4-2-采集率以调用链首个服务为主" class="headerlink" title="4.2 采集率以调用链首个服务为主"></a>4.2 采集率以调用链首个服务为主</h3><p>例：A采集率10%，B采集率100%。 A调用B形成一个调用链。 只有10%概率会被采集到zipkin服务器上。<br>反之亦凡。</p>
 
     
 
@@ -302,7 +351,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://huanghuizhou.github.io/photos/index.html" title="相册" target="_blank">https://huanghuizhou.github.io/photos/index.html</a>
+          <a href="https://huanghuizhou.github.io/2019/06/14/zipkin接入/" title="zipkin接入" target="_blank">https://huanghuizhou.github.io/2019/06/14/zipkin接入/</a>
         </li>
         
         <li>
@@ -319,6 +368,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">boot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链路</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -370,7 +438,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/photos/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/2019/06/14/zipkin%E6%8E%A5%E5%85%A5/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -382,6 +450,16 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/24/elasticsearch%E6%8E%A5%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">elasticsearch接入</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -399,6 +477,16 @@
         
     </div>
 </aside>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -439,7 +527,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

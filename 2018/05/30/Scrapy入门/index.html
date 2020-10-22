@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://huanghuizhou.github.io">
-  <title>相册 | 长生</title>
+  <title>scrapy爬虫 快速入门 | 长生</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="https://huanghuizhou.github.io/photos/index.html">
+  <meta name="description" content="1. 简介Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 其可以应用在数据挖掘，信息处理或存储历史数据等一系列的程序中。其最初是为了页面抓取 (更确切来说, 网络抓取 )所设计的， 也可以应用在获取API所返回的数据(例如 Amazon Associates Web Services ) 或者通用的网络爬虫。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。Scrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scrapy爬虫 快速入门">
+<meta property="og:url" content="https://huanghuizhou.github.io/2018/05/30/Scrapy%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="长生">
-<meta property="og:description" content="Photos 	视频   	图片正在加载中…     (function() {     var loadScript &#x3D; function(path) {       var $script &#x3D; document.createElement(&#39;script&#39;)       document.getElementsByTagName(&#39;body&#39;)[0].appendChild($scrip">
+<meta property="og:description" content="1. 简介Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 其可以应用在数据挖掘，信息处理或存储历史数据等一系列的程序中。其最初是为了页面抓取 (更确切来说, 网络抓取 )所设计的， 也可以应用在获取API所返回的数据(例如 Amazon Associates Web Services ) 或者通用的网络爬虫。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。Scrap">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-19T03:21:46.646Z">
-<meta property="article:modified_time" content="2020-10-19T03:19:54.000Z">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/Scrapy%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/Scrapy%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://huanghuizhou.github.io/assets/data/img/Scrapy%E7%BB%93%E6%9E%9C.png">
+<meta property="article:published_time" content="2018-05-30T01:47:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T06:59:25.928Z">
 <meta property="article:author" content="长生">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="爬虫">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huanghuizhou.github.io/assets/data/img/Scrapy%E6%9E%B6%E6%9E%84.png">
   
     <link rel="alternative" href="/atom.xml" title="长生" type="application/atom+xml">
   
@@ -218,17 +224,28 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-photos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Scrapy入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      相册
+      scrapy爬虫 快速入门
     </h1>
   
 
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2018/05/30/Scrapy%E5%85%A5%E9%97%A8/" class="archive-article-date">
+        <time datetime="2018-05-30T01:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
+</a>
 
   
   
@@ -236,26 +253,67 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn active" href="javascript:void(0)">Photos</a>
-	<a class="photos-btn" href="video.html">视频</a>
-</div>
-<div class="instagram itemscope">
-	<a href="https://www.instagram.com/lawlitewang20/" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-      loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
+    <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 其可以应用在数据挖掘，信息处理或存储历史数据等一系列的程序中。其最初是为了页面抓取 (更确切来说, 网络抓取 )所设计的， 也可以应用在获取API所返回的数据(例如 Amazon Associates Web Services ) 或者通用的网络爬虫。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。Scrapy 使用了 Twisted异步网络库来处理网络通讯。</p>
+<h3 id="1-1-整体架构大致如下"><a href="#1-1-整体架构大致如下" class="headerlink" title="1.1.整体架构大致如下"></a>1.1.整体架构大致如下</h3><p><img src="/assets/data/img/Scrapy%E6%9E%B6%E6%9E%84.png" alt="结构"></p>
+<a id="more"></a>
+
+
+<p>Scrapy主要包括了以下组件：</p>
+<h4 id="引擎-Scrapy"><a href="#引擎-Scrapy" class="headerlink" title="引擎(Scrapy)"></a>引擎(Scrapy)</h4><blockquote>
+<p>用来处理整个系统的数据流, 触发事务(框架核心)</p>
+</blockquote>
+<h4 id="调度器-Scheduler"><a href="#调度器-Scheduler" class="headerlink" title="调度器(Scheduler)"></a>调度器(Scheduler)</h4><blockquote>
+<p>用来接受引擎发过来的请求, 压入队列中, 并在引擎再次请求的时候返回. 可以想像成一个URL（抓取网页的网址或者说是链接）的优先队列, 由它来决定下一个要抓取的网址是什么, 同时去除重复的网址</p>
+</blockquote>
+<h4 id="下载器-Downloader"><a href="#下载器-Downloader" class="headerlink" title="下载器(Downloader)"></a>下载器(Downloader)</h4><blockquote>
+<p>用于下载网页内容, 并将网页内容返回给蜘蛛(Scrapy下载器是建立在twisted这个高效的异步模型上的)</p>
+</blockquote>
+<h4 id="爬虫-Spiders"><a href="#爬虫-Spiders" class="headerlink" title="爬虫(Spiders)"></a>爬虫(Spiders)</h4><blockquote>
+<p>爬虫是主要干活的, 用于从特定的网页中提取自己需要的信息, 即所谓的实体(Item)。用户也可以从中提取出链接,让Scrapy继续抓取下一个页面</p>
+</blockquote>
+<h4 id="项目管道-Pipeline"><a href="#项目管道-Pipeline" class="headerlink" title="项目管道(Pipeline)"></a>项目管道(Pipeline)</h4><blockquote>
+<p>负责处理爬虫从网页中抽取的实体，主要的功能是持久化实体、验证实体的有效性、清除不需要的信息。当页面被爬虫解析后，将被发送到项目管道，并经过几个特定的次序处理数据。</p>
+</blockquote>
+<h4 id="下载器中间件-Downloader-Middlewares"><a href="#下载器中间件-Downloader-Middlewares" class="headerlink" title="下载器中间件(Downloader Middlewares)"></a>下载器中间件(Downloader Middlewares)</h4><blockquote>
+<p>位于Scrapy引擎和下载器之间的框架，主要是处理Scrapy引擎与下载器之间的请求及响应。</p>
+</blockquote>
+<h4 id="爬虫中间件-Spider-Middlewares"><a href="#爬虫中间件-Spider-Middlewares" class="headerlink" title="爬虫中间件(Spider Middlewares)"></a>爬虫中间件(Spider Middlewares)</h4><blockquote>
+<p>介于Scrapy引擎和爬虫之间的框架，主要工作是处理蜘蛛的响应输入和请求输出。</p>
+</blockquote>
+<h4 id="调度中间件-Scheduler-Middewares"><a href="#调度中间件-Scheduler-Middewares" class="headerlink" title="调度中间件(Scheduler Middewares)"></a>调度中间件(Scheduler Middewares)</h4><blockquote>
+<p>介于Scrapy引擎和调度之间的中间件，从Scrapy引擎发送到调度的请求和响应。</p>
+</blockquote>
+<h3 id="1-2-运行流程"><a href="#1-2-运行流程" class="headerlink" title="1.2 运行流程"></a>1.2 运行流程</h3><p>Scrapy运行流程大概如下：</p>
+<ol>
+<li>引擎从调度器中取出一个链接(URL)用于接下来的抓取</li>
+<li>引擎把URL封装成一个请求(Request)传给下载器</li>
+<li>下载器把资源下载下来，并封装成应答包(Response)</li>
+<li>爬虫解析Response</li>
+<li>解析出实体（Item）,则交给实体管道进行进一步的处理</li>
+<li>解析出的是链接（URL）,则把URL交给调度器等待抓取</li>
+</ol>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2 安装"></a>2 安装</h2><p>安装wheel</p>
+<p><code>pip install wheel</code></p>
+<p>安装scrapy</p>
+<p><code>pip install scrapy</code></p>
+<h2 id="3-Scrapy项目示例"><a href="#3-Scrapy项目示例" class="headerlink" title="3 Scrapy项目示例"></a>3 Scrapy项目示例</h2><p>此项目爬取豆瓣Top250 影视作品的信息 地址为<a target="_blank" rel="noopener" href="http://movie.douban.com/top250">http://movie.douban.com/top250</a></p>
+<h3 id="3-1-创建工程"><a href="#3-1-创建工程" class="headerlink" title="3.1 创建工程"></a>3.1 创建工程</h3><p>创建工程 <code>scrapy startproject XXXXX</code> XXXXX代表你项目的名字</p>
+<p>项目创建完会产生如下目录结构</p>
+<p><img src="/assets/data/img/Scrapy%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="目录结构"></p>
+<h3 id="3-2-设置数据存储模板"><a href="#3-2-设置数据存储模板" class="headerlink" title="3.2 设置数据存储模板"></a>3.2 设置数据存储模板</h3><p>设置储存模板 items.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scrapy <span class="keyword">import</span> Item, Field</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubanItem</span>(<span class="params">Item</span>):</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    <span class="comment"># name = scrapy.Field()</span></span><br><span class="line">    title = Field()</span><br><span class="line">    movieInfo = Field()</span><br><span class="line">    star = Field()</span><br><span class="line">    quote = Field() </span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3编写爬虫"><a href="#3-3编写爬虫" class="headerlink" title="3.3编写爬虫"></a>3.3编写爬虫</h3><p>编写爬虫Sider 集成父类CrawSpider name 为到时执行爬虫的name</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Douban</span>(<span class="params">CrawlSpider</span>):</span></span><br><span class="line">    name = <span class="string">&quot;douban&quot;</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;http://movie.douban.com/top250&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    url = <span class="string">&#x27;http://movie.douban.com/top250&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span></span><br><span class="line">        <span class="comment"># print response.body</span></span><br><span class="line">        item = DoubanItem()</span><br><span class="line">        selector = Selector(response)</span><br><span class="line">        <span class="comment"># print selector</span></span><br><span class="line">        Movies = selector.xpath(<span class="string">&#x27;//div[@class=&quot;info&quot;]&#x27;</span>)</span><br><span class="line">        <span class="comment"># print Movies</span></span><br><span class="line">        <span class="keyword">for</span> eachMoive <span class="keyword">in</span> Movies:</span><br><span class="line">            title = eachMoive.xpath(<span class="string">&#x27;div[@class=&quot;hd&quot;]/a/span/text()&#x27;</span>).extract()</span><br><span class="line">            <span class="comment"># 把两个名称合起来</span></span><br><span class="line">            fullTitle = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            <span class="keyword">for</span> each <span class="keyword">in</span> title:</span><br><span class="line">                fullTitle += each</span><br><span class="line">            movieInfo = eachMoive.xpath(<span class="string">&#x27;div[@class=&quot;bd&quot;]/p/text()&#x27;</span>).extract()</span><br><span class="line">            star = eachMoive.xpath(<span class="string">&#x27;div[@class=&quot;bd&quot;]/div[@class=&quot;star&quot;]/span[@class=&quot;rating_num&quot;]/text()&#x27;</span>).extract()[<span class="number">0</span>]</span><br><span class="line">            quote = eachMoive.xpath(<span class="string">&#x27;div[@class=&quot;bd&quot;]/p[@class=&quot;quote&quot;]/span/text()&#x27;</span>).extract()</span><br><span class="line">            <span class="comment"># quote可能为空，因此需要先进行判断</span></span><br><span class="line">            <span class="keyword">if</span> quote:</span><br><span class="line">                quote = quote[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                quote = <span class="string">&#x27;&#x27;</span></span><br><span class="line">                <span class="comment"># print fullTitle</span></span><br><span class="line">            <span class="comment"># print movieInfo</span></span><br><span class="line">            <span class="comment"># print star</span></span><br><span class="line">            <span class="comment"># print quote</span></span><br><span class="line">            item[<span class="string">&#x27;title&#x27;</span>] = fullTitle</span><br><span class="line">            item[<span class="string">&#x27;movieInfo&#x27;</span>] = <span class="string">&#x27;;&#x27;</span>.join(movieInfo)</span><br><span class="line">            item[<span class="string">&#x27;star&#x27;</span>] = star</span><br><span class="line">            item[<span class="string">&#x27;quote&#x27;</span>] = quote</span><br><span class="line">            <span class="keyword">yield</span> item</span><br><span class="line">            nextLink = selector.xpath(<span class="string">&#x27;//span[@class=&quot;next&quot;]/link/@href&#x27;</span>).extract()</span><br><span class="line">            <span class="comment"># 第10页是最后一页，没有下一页的链接</span></span><br><span class="line">            <span class="keyword">if</span> nextLink:</span><br><span class="line">                nextLink = nextLink[<span class="number">0</span>]</span><br><span class="line">                print(nextLink)</span><br><span class="line">                <span class="keyword">yield</span> Request(self.url + nextLink, callback=self.parse)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-编写数据处理脚本"><a href="#3-4-编写数据处理脚本" class="headerlink" title="3.4 编写数据处理脚本"></a>3.4 编写数据处理脚本</h3><p>在这里可以对数据进行处理，或进行持久化保存到mysql，mongodb等数据库</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mongodb.dao <span class="keyword">import</span> MONGO_CLIENT, DB_NAME,COLLECTION_NAME</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Douban250Pipeline</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span>(<span class="params">self, item, spider</span>):</span></span><br><span class="line">        collection = MONGO_CLIENT[DB_NAME][COLLECTION_NAME]</span><br><span class="line">        collection.insert_one(&#123;</span><br><span class="line">            <span class="string">&#x27;title&#x27;</span>: item[<span class="string">&#x27;title&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;movieInfo&#x27;</span>: item[<span class="string">&#x27;movieInfo&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;star&#x27;</span>: item[<span class="string">&#x27;star&#x27;</span>],</span><br><span class="line">            <span class="string">&#x27;quote&#x27;</span>: item[<span class="string">&#x27;quote&#x27;</span>]</span><br><span class="line">        &#125;)</span><br><span class="line">        print(item)</span><br><span class="line">        <span class="keyword">return</span> item </span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-5-修改配置文件"><a href="#3-5-修改配置文件" class="headerlink" title="3.5 修改配置文件"></a>3.5 修改配置文件</h3><p>修改PIPELINES <code> ITEM_PIPELINES=&#123; &#39;douban250.pipelines.Douban250Pipeline&#39;:300, &#125;</code></p>
+<p>伪造身份 <code>USER_AGENT = &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5&#39;</code></p>
+<h3 id="3-6-执行爬虫"><a href="#3-6-执行爬虫" class="headerlink" title="3.6 执行爬虫"></a>3.6 执行爬虫</h3><p><code>scrapy crawl douban</code></p>
+<h2 id="执行结果"><a href="#执行结果" class="headerlink" title="#执行结果"></a>#执行结果</h2><p><img src="/assets/data/img/Scrapy%E7%BB%93%E6%9E%9C.png" alt="结果"></p>
 
     
 
@@ -302,7 +360,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://huanghuizhou.github.io/photos/index.html" title="相册" target="_blank">https://huanghuizhou.github.io/photos/index.html</a>
+          <a href="https://huanghuizhou.github.io/2018/05/30/Scrapy入门/" title="scrapy爬虫 快速入门" target="_blank">https://huanghuizhou.github.io/2018/05/30/Scrapy入门/</a>
         </li>
         
         <li>
@@ -319,6 +377,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -370,7 +443,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/photos/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://huanghuizhou.github.io/2018/05/30/Scrapy%E5%85%A5%E9%97%A8/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -382,6 +455,20 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+    <a href="/2018/06/08/%E9%98%B2%E6%AD%A2%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          防止表单重复提交
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -399,6 +486,16 @@
         
     </div>
 </aside>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -439,7 +536,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
